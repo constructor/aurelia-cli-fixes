@@ -32,4 +32,8 @@
       </ResolvedFileToPublish>
     </ItemGroup>
   </Target>
+  <Target Name="CleanAurelia" AfterTargets="Clean">
+    <!-- Remove obj folder -->
+    <RemoveDir Directories="wwwroot\dist" />
+  </Target>
 </Project>

@@ -1,0 +1,220 @@
+{
+  "name": "New Aurelia Application Template",
+  "activities": [
+    {
+      "id": 10,
+      "type": "state-assign",
+      "nextActivity": 100,
+      "state": {
+        "type": "project:dotnet-template",
+        "templateType": {
+          "id": "web"
+        },
+        "template": {
+          "id": "Designs.Digital.Aurelia.Templates.MVC"
+        },
+        "done": {
+          "id":  "no"
+        }
+      }
+    },
+    {
+      "type": "input-select",
+      "id": 100,
+      "nextActivity": 150,
+      "question": "What template type do you require?",
+      "stateProperty": "templateType",
+      "options": [
+        {
+          "displayName": "Web App",
+          "description": "A selection of templates for web based apps",
+          "value": {
+            "id": "web"
+          }
+        },
+        {
+          "displayName": "Mobile App",
+          "description": "A selection of templates for hybrid mobile and progressive web apps",
+          "value": {
+            "id": "mobile"
+          }
+        },
+        {
+          "displayName": "Plugin",
+          "description": "A starting point for Aurelia plugin development.",
+          "value": {
+            "id": "plugin"
+          }
+        }
+      ]
+    },
+    {
+      "type": "branch-switch",
+      "id": 150,
+      "stateProperty": "templateType",
+      "branches": [
+        {
+          "case": "web",
+          "nextActivity": 200
+        },
+        {
+          "case": "mobile",
+          "nextActivity": 210
+        },
+        {
+          "case": "plugin",
+          "nextActivity": 220
+        }
+      ]
+    },
+    {
+      "type": "input-select",
+      "id": 200,
+      "nextActivity": 300,
+      "question": "What web template do you require?",
+      "stateProperty": "template",
+      "options": [
+        {
+          "displayName": "MVC Webpack",
+          "description": "ASP.net core 2.0 MVC with webpack.",
+          "value": {
+            "id": "Designs.Digital.Aurelia.Templates.MVC",
+            "cmd": "au-net"
+          }
+        },
+        {
+          "displayName": "Aurelia Materialize Bridge",
+          "description": "ASP.net core 2.0 MVC with Webpack and Aurelia Materialize Bridge.",
+          "value": {
+            "id": "Designs.Digital.Aurelia.Templates.MVC.MatBr",
+            "cmd": "au-mat-br"
+          }
+        },
+        {
+          "displayName": "MVC Webpack again...",
+          "description": "ASP.net core 2.0 MVC with webpack.",
+          "value": {
+            "id": "Designs.Digital.Aurelia.Templates.MVC",
+            "cmd": "au-net"
+          }
+        },
+        {
+          "displayName": "Aurelia Materialize Bridge and again...",
+          "description": "ASP.net core 2.0 MVC with Webpack and Aurelia Materialize Bridge.",
+          "value": {
+            "id": "Designs.Digital.Aurelia.Templates.MVC.MatBr",
+            "cmd": "au-mat-br"
+          }
+        }
+      ]
+    },
+    {
+      "type": "input-select",
+      "id": 210,
+      "nextActivity": 300,
+      "question": "What mobile template do you require?",
+      "stateProperty": "template",
+      "options": [
+        {
+          "displayName": "Mobile Template 1",
+          "description": "An Aurelia mobile project template.",
+          "value": {
+            "id": "Designs.Digital.Aurelia.Templates.MVC"
+          }
+        },
+        {
+          "displayName": "Mobile Template 2",
+          "description": "An Aurelia mobile project template.",
+          "value": {
+            "id": "Designs.Digital.Aurelia.Templates.MVC"
+          }
+        },
+        {
+          "displayName": "Mobile Template 3",
+          "description": "An Aurelia mobile project template.",
+          "value": {
+            "id": "Designs.Digital.Aurelia.Templates.MVC"
+          }
+        }
+      ]
+    },
+    {
+      "type": "input-select",
+      "id": 220,
+      "nextActivity": 300,
+      "question": "What plugin template do you require?",
+      "stateProperty": "template",
+      "options": [
+        {
+          "displayName": "Plugin Template 1",
+          "description": "An Aurelia plugin project template.",
+          "value": {
+            "id": "Designs.Digital.Aurelia.Templates.MVC"
+          }
+        },
+        {
+          "displayName": "Plugin Template 2",
+          "description": "An Aurelia plugin project template.",
+          "value": {
+            "id": "Designs.Digital.Aurelia.Templates.MVC"
+          }
+        },
+        {
+          "displayName": "Plugin Template 3",
+          "description": "An Aurelia plugin project template.",
+          "value": {
+            "id": "Designs.Digital.Aurelia.Templates.MVC"
+          }
+        }
+      ]
+    },
+    {
+      "type": "input-select",
+      "id": 300,
+      "nextActivity": 310,
+      "question": "Confirm selection and proceed or select a different template?",
+      "stateProperty": "done",
+      "options": [
+        {
+          "displayName": "Proceed with selection",
+          "value": {
+            "id": "yes"
+          }
+        },
+        {
+          "displayName": "Select a new template",
+          "value": {
+            "id": "no"
+          }
+        }
+      ]
+    },
+    {
+      "type": "branch-switch",
+      "id": 310,
+      "stateProperty": "done",
+      "branches": [
+        {
+          "case": "yes",
+          "nextActivity": 1000
+        },
+        {
+          "case": "no",
+          "nextActivity": 1100
+        }
+      ]
+    },
+    {
+      "id": 1000,
+      "type": "template-install"
+    },
+    {
+      "id": 1100,
+      "type": "state-assign",
+      "nextActivity": 100,
+      "state": {
+        "templateType": "web" 
+      }
+    }
+  ]
+}

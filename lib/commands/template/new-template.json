@@ -75,6 +75,14 @@
       "stateProperty": "template",
       "options": [
         {
+          "displayName": "MVC RequireJS (aurelia.template processing)",
+          "description": "Aurelia-CLI, ASP.NET Core, RequireJS, Babel",
+          "value": {
+            "id": "https://github.com/constructor/au_template-1",
+            "name": "ASP.Net Core 2.0, MVC, Webpack Template"
+          }
+        },
+        {
           "displayName": "MVC Webpack",
           "description": "ASP.Net Core 2.0, MVC and Webpack Template",
           "value": {
@@ -88,14 +96,6 @@
           "value": {
             "id": "https://github.com/constructor/cli_tmpl-MVC_Au_MatBr",
             "name": "ASP.Net Core 2.0, MVC, Materialize Bridge and Webpack Template"
-          }
-        },
-        {
-          "displayName": "MVC Webpack again...",
-          "description": "ASP.Net Core 2.0, MVC, Webpack Template",
-          "value": {
-            "id": "https://github.com/constructor/cli_tmpl-MVC_Au",
-            "name": "ASP.Net Core 2.0, MVC, Webpack Template"
           }
         },
         {
